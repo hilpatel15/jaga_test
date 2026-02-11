@@ -218,14 +218,32 @@ const LandingPage = () => {
 
   // Load WotNot chatbot script
   useEffect(() => {
+    // Check if script already exists
+    const existingScript = document.querySelector('script[src*="wotnot.io"]');
+    if (existingScript) {
+      return;
+    }
+
     const script = document.createElement('script');
     script.src = 'https://app.wotnot.io/chat-widget/3HtdW3W8ZPzR081224776188TpLFmPvH.js';
     script.defer = true;
+    script.async = true;
+    
+    script.onload = () => {
+      console.log('WotNot chatbot loaded successfully');
+    };
+    
+    script.onerror = () => {
+      console.error('Failed to load WotNot chatbot');
+    };
+    
     document.body.appendChild(script);
 
     return () => {
       // Cleanup script on component unmount
-      document.body.removeChild(script);
+      if (script.parentNode) {
+        document.body.removeChild(script);
+      }
     };
   }, []);
 
