@@ -1,4 +1,4 @@
-// import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 // import { useAppContext } from "@/context/AppContext";
 // import Header from "@/components/layouts/Header";
 // import Footer from "@/components/layouts/Footer";
@@ -81,7 +81,40 @@
 // const LabelClass = "text-sm font-bold text-black";
 // const SectionTitleClass = "md:col-span-2 text-xl font-extrabold text-black/80 mt-6 border-t pt-6";
 
-// const LandingPage = () => {
+const LandingPage = () => {
+  // Inject WotNot widget on mount, remove on unmount
+  useEffect(() => {
+    // Only inject if not already present
+    if (!document.getElementById('wotnot-widget-script')) {
+      const script = document.createElement('script');
+      script.id = 'wotnot-widget-script';
+      script.src = 'https://app.wotnot.io/chat-widget/3HtdW3W8ZPzR081224776188TpLFmPvH.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    }
+    // Add iframe
+    if (!document.getElementById('wotnot-widget-iframe')) {
+      const iframe = document.createElement('iframe');
+      iframe.id = 'wotnot-widget-iframe';
+      iframe.width = '360';
+      iframe.height = '600';
+      iframe.src = 'https://embed.wotnot.io/3HtdW3W8ZPzR081224776188TpLFmPvH/bot/5ucJpctwuvx20812256017849Jr1k3xS?display_header=false&history_retention=false';
+      iframe.frameBorder = '0';
+      iframe.style.border = '0';
+      iframe.style.position = 'fixed';
+      iframe.style.right = '20px';
+      iframe.style.bottom = '20px';
+      iframe.style.zIndex = '2147483647';
+      document.body.appendChild(iframe);
+    }
+    // Cleanup on unmount
+    return () => {
+      const script = document.getElementById('wotnot-widget-script');
+      if (script) script.remove();
+      const iframe = document.getElementById('wotnot-widget-iframe');
+      if (iframe) iframe.remove();
+    };
+  }, []);
 //   const { addLead } = useAppContext();
 //   const [formData, setFormData] = useState(initialFormState);
 //   const [isSubmitting, setIsSubmitting] = useState(false);
