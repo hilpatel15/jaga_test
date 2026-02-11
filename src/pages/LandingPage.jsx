@@ -674,6 +674,7 @@ const LandingPage = () => {
   return (
     <>
       <Header />
+      <script src="https://app.wotnot.io/chat-widget/3HtdW3W8ZPzR081224776188TpLFmPvH.js" defer></script>
       <main className="bg-white text-black">
         {submitMessage && (
           <div className="sticky top-0 z-50">
