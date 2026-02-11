@@ -1,10 +1,87 @@
-import React, { useState, useEffect } from "react";
-import { useAppContext } from "@/context/AppContext";
-import Header from "@/components/layouts/Header";
-import Footer from "@/components/layouts/Footer";
-import { CheckCircle2 } from "lucide-react";
-// ...existing code...
-// Remove orphaned useEffect block outside the LandingPage function.
+// import React, { useState } from "react";
+// import { useAppContext } from "@/context/AppContext";
+// import Header from "@/components/layouts/Header";
+// import Footer from "@/components/layouts/Footer";
+// import { CheckCircle2 } from "lucide-react";
+
+// const SERVICES = [
+//   "Administrative Support",
+//   "Customer Service",
+//   "24/7 Availability",
+//   "Social Media Management",
+//   "Email & Calendar Management",
+//   "Executive Assistance",
+// ];
+
+// const INDUSTRY_OPTIONS = [
+//   "Real Estate",
+//   "Construction",
+//   "Recruitment",
+//   "Bookkeeping",
+//   "Mortgage Broking",
+//   "IT / Technology",
+//   "Marketing",
+//   "Other",
+// ];
+
+// const SUPPORT_REQUIRED_OPTIONS = [
+//   "Email & calendar management",
+//   "Data entry",
+//   "CRM updates",
+//   "Invoicing / accounts admin",
+//   "Document preparation",
+//   "Social media support",
+//   "Client communication",
+//   "Recruitment admin",
+//   "Property admin",
+//   "General admin tasks",
+// ];
+
+// const START_DATE_OPTIONS = ["ASAP", "Within 1 week", "Within 2–4 weeks", "Flexible"];
+// const EMPLOYMENT_TYPE_OPTIONS = ["Full-time", "Part-time", "Casual / Project-based"];
+// const PART_TIME_SHIFT_OPTIONS = [
+//   "Morning shift (9.30am to 1.30pm)",
+//   "Afternoon shift (1.30pm to 5.30pm)",
+//   "Flexible",
+// ];
+// const TIME_OVERLAP_OPTIONS = ["9am–12pm", "9am–3pm", "Full-day", "Flexible"];
+// const YES_NO_OPTIONS = ["Yes", "No"];
+// const CALL_TIME_OPTIONS = ["Morning", "Afternoon", "Flexible"];
+
+// const initialFormState = {
+//   name: "",
+//   email: "",
+//   phone: "",
+//   company: "",
+//   businessWebsite: "",
+//   industrySector: "",
+//   industrySectorOther: "",
+//   businessDescription: "",
+//   supportRequired: [],
+//   supportRequiredOther: "",
+//   expectedStartDate: "",
+//   employmentType: "",
+//   preferredShift: "",
+//   preferredTimeOverlap: "",
+//   specificSkillSets: "",
+//   industryExperienceRequired: "",
+//   industryExperienceDetails: "",
+//   keyToolsAndSoftware: "",
+//   processTrainingProvided: "",
+//   ndaRequired: "",
+//   complianceRequirements: "",
+//   message: "",
+//   budgetRange: "",
+//   genderPreference: "",
+//   discoveryCall: "",
+//   preferredCallTime: "",
+// };
+
+// const InputClass = "mt-2 w-full rounded-lg border-2 border-gray-400 px-4 py-3 focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400 outline-none bg-white";
+// const LabelClass = "text-sm font-bold text-black";
+// const SectionTitleClass = "md:col-span-2 text-xl font-extrabold text-black/80 mt-6 border-t pt-6";
+
+// const LandingPage = () => {
 //   const { addLead } = useAppContext();
 //   const [formData, setFormData] = useState(initialFormState);
 //   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -674,7 +751,6 @@ const LandingPage = () => {
   return (
     <>
       <Header />
-      <script src="https://app.wotnot.io/chat-widget/3HtdW3W8ZPzR081224776188TpLFmPvH.js" defer></script>
       <main className="bg-white text-black">
         {submitMessage && (
           <div className="sticky top-0 z-50">
@@ -1280,4 +1356,5 @@ const LandingPage = () => {
     </>
   );
 };
-// ...remove extra closing brace...
+
+export default LandingPage;

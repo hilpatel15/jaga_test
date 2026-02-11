@@ -16,4 +16,4 @@ if (!container) {
         <App />
       </AppProvider>
   );
-    // Widget is loaded statically via index.html in production.
+}
