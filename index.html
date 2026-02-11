@@ -8,7 +8,24 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/index.jsx"></script>
-    <script src="https://app.wotnot.io/chat-widget/3HtdW3W8ZPzR081224776188TpLFmPvH.js" defer></script>
-    <iframe width="640" height="480" src="https://embed.wotnot.io/3HtdW3W8ZPzR081224776188TpLFmPvH/bot/5ucJpctwuvx20812256017849Jr1k3xS?display_header=false&history_retention=false" frameborder="0"></iframe>
+    <script>
+      (function(){
+        var allowedHosts = ['jagatest.vercel.app'];
+        if (allowedHosts.indexOf(location.hostname) === -1) return;
+
+        var s = document.createElement('script');
+        s.src = 'https://app.wotnot.io/chat-widget/3HtdW3W8ZPzR081224776188TpLFmPvH.js';
+        s.defer = true;
+        document.head.appendChild(s);
+
+        var iframe = document.createElement('iframe');
+        iframe.width = '640';
+        iframe.height = '480';
+        iframe.src = 'https://embed.wotnot.io/3HtdW3W8ZPzR081224776188TpLFmPvH/bot/5ucJpctwuvx20812256017849Jr1k3xS?display_header=false&history_retention=false';
+        iframe.frameBorder = '0';
+        iframe.style.border = '0';
+        document.body.appendChild(iframe);
+      })();
+    </script>
   </body>
 </html>
